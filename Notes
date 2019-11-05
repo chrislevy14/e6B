@@ -1,0 +1,60 @@
+Notes:
+
+https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+
+
+
+List of Functions:
+
+===============================================================================
+1. Heading and Ground Speed (Wind Direction, Windspeed, Course, True Airspeed)
+
+2. Pressure and Density Altitude (Indicated altitude, Barometric Pressure, Temperature Celsius)
+
+===============================================================================
+3. Heading only (Course, True Airspeed, Groundspeed)
+
+4. Crosswind and Headwind Components (Wind Direction, Windspeed, Runway,)
+
+5. Cloud Base (Outside Air Temperature Celsius, Dew Point point celsius)
+
+===============================================================================
+6. Groundspeed (Distance, Time)
+
+7. Planned True Airspeed (Pressure Altitude, Temperature Celsius, Calibrated Airspeed)
+
+8. Actual True Airpseed (Pressure Altitude, Indicated Degrees Celsius, Calibrated Airspeed,)
+
+
+=================================================================================
+11. Distance Flown (Groundspeed, Time)
+
+12. Top of Descent (Groundspeed, Indicated altitude, Destination Altitude, Rate)
+
+13. Endurance in time (Fuel, Fuel per Hour)
+
+14. Leg Time (Distance, Ground Speed)
+
+15. Specific range (Fuel, Fuel per Hour, Groundspeed)
+
+16. Fuel per hour (Fuel, Time)
+
+================================================================================
+17. Fuel Required (Time, FPH)
+
+18. Required rate of Climb (Min Climb, speed, )
+
+19.Required Rate of Descent (Groundspeed,indicated altitude, crossing altitude and fix distance)
+
+20. Required True Airpseed ( Wind Direction, Windspeed, Course, Ground Speed)
+
+21. Required Calibrated Airpseed (Pressure altitude, Temperature celsius, True airspeed)
+
+22. Moment, CG (Weight,arm, Reduction factor?)
+
+
+
+================
+Conversions:
+1. Celsius to Farenheit and back
+2. 
