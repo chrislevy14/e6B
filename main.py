@@ -10,6 +10,7 @@ Christos Levy 2019
 
 import watch as w
 import flight as f
+import weightBalance as wb
 
 numError = "Error: Input(s) must be a number"
 
@@ -25,11 +26,16 @@ while True:
         funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n\n"
         funcGSelect = input(funcGroup)
         if funcGSelect == "quit":
+            print("Thank you for using the Lev6B!")
             killed = True
             break
         try: 
             funcGSelect = int(funcGSelect)
-            break
+            if funcGSelect > 6 or funcGSelect < 1:
+                print("Function Group Not Recognized\n")
+                continue
+            else:
+                break
         except:
             print("\nError: Enter the number of the list or type 'quit' to exit")
             continue
@@ -153,10 +159,30 @@ while True:
                 if killed == True:
                     break     
 
-            ## Weight and Balance Functions                        
+            # Weight and Balance Functions WORKING                       
             elif funcGSelect == 5:
-                a = 5
-
+                while funKill == False:
+                    funcSelect = input("\n1. Weight and Arm\n2. Weight and Moment\n3. Percent Mean Aerodynamic Chord\n4. Quit to Main Menu\n")
+                    try:
+                        funcSelect = int(funcSelect)
+                    except:
+                        print(numError)
+                        continue
+                    if funcSelect == 1:
+                        wb.weightArm()
+                    elif funcSelect == 2:
+                        wb.weightMom()
+                    elif funcSelect == 3:
+                        wb.mac()
+                    elif funcSelect == 4:
+                        funKill = True
+                        killed = True
+                        break
+                    else: 
+                        print("Function not Recognized")
+                if funKill == True:
+                    break
+      
             ## Conversion and Clock Functions WORKING
             elif funcGSelect == 6:
                 while funKill == False:
@@ -204,5 +230,6 @@ while True:
                 if killed == True:
                     break
      
-            else:
-                print("Function Group Not Recognized")
+           
+                
+                
