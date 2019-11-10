@@ -14,7 +14,7 @@ import time
 
 ## This function prints a stopwatch on the screen
 def stopwatch():
-    print("TIMER FUNCTION\n")
+    print("STOPWATCH FUNCTION\nType Control-C to end")
     ## Get Start Input
     timeLoop = False
     while True:
@@ -94,10 +94,10 @@ def timer(hour,min,sec):
 def tempConvert(type,degrees):
     if type == "1": ##Convert to celsius
         celsius = (5/9)*(degrees-32)
-        return f"{celsius} Degrees Celsius"
+        return f"{round(celsius,1)} Degrees Celsius"
     elif type == "2": ## Convert to farenheit
         faren = (9/5)*degrees + 32
-        return f"{faren} Degrees Fahrenheit"
+        return f"{round(faren,1)} Degrees Fahrenheit"
     else:
         return
 

@@ -1,7 +1,8 @@
 """
 =========================
+##  Flight Class  ##
 
-Flight Functions Script
+Contains flight functions
 
 Christos Levy 2019
 =========================
@@ -18,49 +19,64 @@ def distFln(gs,hr,min,sec):
 ## Returns the distance that is the top of the descent
 def topDscn(gs,ialt,dalt,rate):
     alt = ialt-dalt ## Altitude to descend
-    timeM = alt/rate ## Time in minutes
-    timeH = timeM/60
-    dist = round(timeH*gs,1)
-    return f"{dist} Mile(s)"
+    if rate == 0:
+        return 0
+    else:
+        timeM = alt/rate ## Time in minutes
+        timeH = timeM/60
+        dist = round(timeH*gs,1)
+        return f"{dist} Mile(s)"
 
 ## Returns the Endurance of the Aircraft based on the amount of fuel it contains and its fuel burn
 def endur(fuel,fph):
-    hours = fuel/fph
-    if hours % 1 == 0:
-        return f"{hours} Hour(s)"
+    if fph == 0:
+        return 0
     else:
-        remainderM = hours % 1
-        minutes = 60*remainderM
-        remainderS = minutes%1
-        seconds = int(remainderS*60)
-        return f"{int(hours)} Hour(s) {int(minutes)} minute(s) {seconds} second(s)"
+        hours = fuel/fph
+        if hours % 1 == 0:
+            return f"{hours} Hour(s)"
+        else:
+            remainderM = hours % 1
+            minutes = 60*remainderM
+            remainderS = minutes%1
+            seconds = int(remainderS*60)
+            return f"{int(hours)} Hour(s) {int(minutes)} minute(s) {seconds} second(s)"
 
 ## Returns the time the leg will take given the ground speed and the distance
 def legTime(distance,gs):
-    time = distance/gs
-    if time%1 == 0:
-        return f"{time} Hours"
+    if gs == 0:
+        return 0 
     else:
-        remM = time%1
-        hours = int(time)
-        min = int(remM*60)
-        sec = (min%1)*60
-        sec = int(sec)
-        return f"{hours} Hour(s) {min} Minute(s) {sec} Second(s)"
+        time = distance/gs
+        if time%1 == 0:
+            return f"{time} Hours"
+        else:
+            remM = time%1
+            hours = int(time)
+            min = (remM*60)
+            sec = (min%1)*60
+            sec = int(sec)
+            return f"{hours} Hour(s) {int(min)} Minute(s) {sec} Second(s)"
 
 ## Calulates the Range at altitude given the amount of fuel, the fuel burn, and the ground speed
 def spcRange(fuel,fph,gs):
-    time = fuel/fph
-    range = round(time*gs,1)
-    return f"{range} Mile(s)"
+    if fph == 0:
+        return 0
+    else:
+        time = fuel/fph
+        range = round(time*gs,1)
+        return f"{range} Mile(s)"
 
 ## Calculates the fuel burn given the time and the amount of fuel burned
 def fuelPerHour(fuel,hour,min,sec):
     minToH = min/60
     secToH = sec/3600
     time = hour+minToH+secToH
-    fph = fuel/time
-    return f"{fph} Gallons per Hour"
+    if time == 0:
+        return 0
+    else:
+        fph = fuel/time
+        return f"{round(fph,1)} Gallons per Hour"
 
 
 
