@@ -1,4 +1,4 @@
-
+#/usr/bin/python3
 """
 ==========================================================
 ##  Watch Class  ##
@@ -10,8 +10,6 @@ Christos Levy 2019
 """
 
 import time
-import sys
-#import keyboard
 
 
 ## This function prints a stopwatch on the screen
@@ -38,9 +36,10 @@ def stopwatch():
     while timeLoop:
         try:
             if Hour == 0:
-                Sec += 1
-                print(f"{Min} Minute(s) {Sec} second(s)", end = '\r')
+                Sec+=1
+                print(f"{Min} Minute(s) {Sec} Second(s)", end = '\r')
                 time.sleep(1)
+                
                 if Sec == 60:
                     Sec = 0
                     Min += 1
@@ -48,8 +47,9 @@ def stopwatch():
                     Hour += 1
             elif Hour > 0:
                 Sec += 1
-                print(f"{Hour} Hour(s) {Min} Minute(s) {Sec} second(s)" , end = '\r')
+                print(f"{Hour} Hour(s) {Min} Minute(s) {Sec} second(s)", end = "\r")
                 time.sleep(1)
+                
                 if Sec == 60:
                     Sec = 0
                     Min += 1
@@ -69,12 +69,13 @@ def timer(hour,min,sec):
         try:
             if sec > 0:
                 sec -= 1
-                print(f"{min} Minute(s) {sec} Second(s)" , end = '\r')
+                print(f"{min} Minute(s) {sec} Second(s)" , end = "\r")
                 time.sleep(1)
+
             elif sec == 0:
                 min-=1
                 sec = 60
-                print(f"{min} Minute(s) {sec} Second(s)", end = '\r')
+                print(f"{min} Minute(s) {sec} Second(s)", end = "\r")
                 time.sleep(1)
             if sec == 0 and min == 0:
                 timerDone = True
@@ -89,6 +90,16 @@ def timer(hour,min,sec):
         except KeyboardInterrupt: ## Need a better to kill program
             break
 
+## This function converts degrees celsius to fahrenheit and vice versa
+def tempConvert(type,degrees):
+    if type == "1": ##Convert to celsius
+        celsius = (5/9)*(degrees-32)
+        return f"{celsius} Degrees Celsius"
+    elif type == "2": ## Convert to farenheit
+        faren = (9/5)*degrees + 32
+        return f"{faren} Degrees Fahrenheit"
+    else:
+        return
 
 
-stopwatch()
+### ALL FUNCTIONS TESTED AND COMPLETED FOR WATCH CLASS
