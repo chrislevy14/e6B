@@ -11,6 +11,7 @@ Christos Levy 2019
 import watch as w
 import flight as f
 import weightBalance as wb
+import weather as wthr
 
 numError = "Error: Input(s) must be a number"
 
