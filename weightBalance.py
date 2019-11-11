@@ -27,7 +27,10 @@ def weightArm():
             WeightList.append(weight)
             totalWeight = sum(WeightList)
             totalMoment += moment
-            centerGravity += totalMoment/totalWeight
+            if totalWeight == 0:
+                centerGravity += 0
+            else:
+                centerGravity += totalMoment/totalWeight
         except:
             print("Error: Values were not numbers")
             continue
@@ -76,9 +79,13 @@ def mac():
             cg = float(cg)
             Lemac = float(Lemac)
             mac = float(mac)
-            percentMac = ((cg - Lemac)/mac)*100
-            print(f"Percent MAC: {round(percentMac,1)}%")
-            break
+            if mac == 0:
+                print("Error: MAC Cannot be 0")
+                continue
+            else:
+                percentMac = ((cg - Lemac)/mac)*100
+                print(f"Percent MAC: {round(percentMac,1)}%")
+                break
         except:
             print("Error: Values were not numbers")
             continue

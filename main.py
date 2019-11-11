@@ -49,7 +49,9 @@ while True:
 
             ## Weather and Heading Functions
             if funcGSelect == 1:
-                a = 1
+                while funKill == False:
+                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue")
+                    pass
 
             ## Speed Functions
             elif funcGSelect == 2:

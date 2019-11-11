@@ -36,9 +36,12 @@ def hdgGs():
             continue
     angleC = abs(wdir-crs)
     gs = round(m.sqrt(wspd**2+tas**2-(2*wspd*tas*cos(angleC))),1)
-    wca = (180/m.pi)*( m.asin( (wspd*sin(wdir-crs)) /gs ) )
-    heading = round(crs + wca)
-    print(f"GROUNDSPEED: {gs}\nHEADING: {heading}\nWCA: {wca}")
+    if gs == 0:
+        return 0
+    else:
+        wca = (180/m.pi)*( m.asin( (wspd*sin(wdir-crs)) /gs ) )
+        heading = round(crs + wca)
+        return (f"GROUNDSPEED: {gs}\nHEADING: {heading}\nWCA: {wca}")
 
 def pressureDensityAlt():
     while True:
@@ -55,6 +58,7 @@ def pressureDensityAlt():
     pAlt = round((29.92-baro)*1000+indicatedAlt)
     degreeChange = 15 - (-2*(indicatedAlt/1000))
     dAlt = round((temp-degreeChange)*120+pAlt)
-    print(f"PRESSURE ALTITUDE: {pAlt}\nDENSITY ALTITUDE: {dAlt}")
+    return (f"PRESSURE ALTITUDE: {pAlt}\nDENSITY ALTITUDE: {dAlt}")
 
-pressureDensityAlt()
+def cldBase():
+    pass
