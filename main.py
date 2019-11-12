@@ -27,7 +27,7 @@ while True:
         funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n\n"
         funcGSelect = input(funcGroup)
         if funcGSelect == "quit":
-            print("Thank you for using the Lev6B!")
+            print("Thank you for using the Lev6B!\n\n")
             killed = True
             break
         try: 
