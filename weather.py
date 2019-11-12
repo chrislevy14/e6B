@@ -13,7 +13,7 @@ import math as m
 def sin(x):
     return m.sin(m.radians(x))
 def asin(x):
-    return m.asin(m.radians(x))
+    return m.degrees(m.asin(x))
 def cos(x):
     return m.cos(m.radians(x))
 
@@ -39,10 +39,11 @@ def hdgGs():
     if gs == 0:
         return 0
     else:
-        wca = (180/m.pi)*( m.asin( (wspd*sin(wdir-crs)) /gs ) )
+        wca = ( asin( (wspd*sin(wdir-crs)) /gs ) )
         heading = round(crs + wca)
         return (f"GROUNDSPEED: {gs}\nHEADING: {heading}\nWCA: {wca}")
 
+## Calulates the Pressure and density altitude
 def pressureDensityAlt():
     while True:
         indicatedAlt = input("Enter Indicated Altitude: ")
@@ -60,5 +61,118 @@ def pressureDensityAlt():
     dAlt = round((temp-degreeChange)*120+pAlt)
     return (f"PRESSURE ALTITUDE: {pAlt}\nDENSITY ALTITUDE: {dAlt}")
 
-def cldBase():
-    pass
+## Returns windspeed and direction
+def wind(): 
+    while True:
+        course = input("Enter Course: ")
+        tas = input("Enter True Airspeed: ")
+        groundspeed = input("Enter Groundspeed: ")
+        heading = input("Enter Heading: ")
+        try:
+            course = float(course)
+            tas = float(tas)
+            groundspeed = float(groundspeed)
+            heading = float(heading)
+            break
+        except:
+            print("Error: All values must be numbers")
+            continue
+    windCorrAngle = heading-course
+    wspd = (m.sqrt(groundspeed**2+tas**2-(2*(groundspeed)*(tas)*cos(windCorrAngle))))
+    if wspd == 0:
+        return 0
+    else:
+        angleC =asin(((groundspeed*sin(heading-course))/wspd))
+        wdir = (abs(angleC+course))
+        return f"\nWIND DIRECTION: {int(wdir)}\nWIND SPEED: {round(wspd,1)}"
+
+## Returns Components of headwind and crosswind given the runway numbers and the wind
+def windComponent():
+    while True:
+        wdir = input("Enter Wind direction: ")
+        wspd = input("Enter Wind speed: ")  
+        runway = input("Enter Runway number (Runway number and not heading): ")
+        try:
+            wdir = int(wdir)
+            wspd = float(wspd)
+            runway = int(runway)
+            if wdir > 360:
+                print("Error: Wind Direction must be less than 360")
+                continue
+            if runway > 36:
+                print("Error: Runway must be less than 36")
+                continue
+            break
+        except:
+            print("Error: Values must be numbers")
+            continue
+    runwayH = runway*10
+    diff = runwayH - wdir
+    ang = 90-diff
+    xwind = round(wspd*cos(ang),1)
+    hwind = round(wspd*sin(ang),1)
+
+    ## Multiple nested If statements determine direction
+    if xwind < 0:
+        xwindSide = 'Crosswind Right'
+        if hwind < 0:
+            hwindSide = "Tailwind"
+        elif hwind > 0:
+            hwindSide = "Headwind"
+        else:
+            hwindSide = "No Headwind Component"
+    elif xwind > 0:
+        xwindSide = 'Crosswind Left'
+        if hwind < 0:
+            hwindSide = "Tailwind"
+        elif hwind > 0:
+            hwindSide = "Headwind"
+        else:
+            hwindSide = "No Headwind Component"
+    else:
+        xwindSide = "No Crosswind Component"
+        if hwind < 0:
+            hwindSide = "Tailwind"
+        elif hwind > 0:
+            hwindSide = "Headwind"
+        else:
+            hwindSide = "No Headwind Component"
+    
+    return f"\n{xwindSide}: {abs(xwind)}\n{hwindSide}: {abs(hwind)}"
+
+## Returns the cloud base in AGL and takes 1 parameter that selects which scale
+def cloudBase(degreeSelect):
+    while True:
+        ## Fahrenheit Calculations
+        if degreeSelect == 1:
+            oat = input("Enter the outside temperature: ")
+            dewPoint = input("Enter the dew point: ")
+            try:
+                oat = float(oat)
+                dewPoint = float(dewPoint)
+                CloudBase = ((oat-dewPoint)/4.4)*1000
+                break
+            except:
+                print("Error: Temperatures must be numbers")
+                continue
+        
+        ## Celsius Calculations
+        elif degreeSelect == 2:
+            oat = input("Enter the outside temperature: ")
+            dewPoint = input("Enter the dew point: ")
+            try:
+                oat = float(oat)
+                dewPoint = float(dewPoint)
+                CloudBase = ((oat-dewPoint)/2.5)*1000
+                break
+            except:
+                print("Error: Temperatures must be numbers")
+                continue
+        else:
+            print("Error: Selection not recognized.")
+            continue
+
+    return f"\nCloud Base: {round(CloudBase,1)} feet AGL"
+    
+
+ 

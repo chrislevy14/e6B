@@ -43,15 +43,57 @@ while True:
   
     if killed == True: ## Kills the entire Program
         break
-
+    
+    ## Function Groups
     while killed == False:
         while True:
 
-            ## Weather and Heading Functions
+            ## Weather and Heading Functions WORKING
             if funcGSelect == 1:
                 while funKill == False:
-                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue")
-                    pass
+                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue\n3. Wind Direction and Speed\n4. Crosswind and Headwind Componenet\n5. Cloud Base\n6. Quit to Main Menu\n")
+                    try:
+                        funcSelect = int(funcSelect)
+                    except:
+                        print(f"{numError}\n")
+                        continue
+                    if funcSelect == 1: ## Heading and Groundspeed
+                        print(wthr.hdgGs())
+                        break
+                    elif funcSelect == 2: ## Pressure and Density altitude
+                        print(wthr.pressureDensityAlt())
+                        break
+                    elif funcSelect == 3: ## Wind direction and speed
+                        print(wthr.wind())
+                        break
+                    elif funcSelect == 4: ##Cross wind and headwind components
+                        print(wthr.windComponent())
+                        break
+                    elif funcSelect == 5: ## Cloudbase
+                        while True:
+                            degreeSelect = input("\n1. Fahrenheit\n2. Celsius\n")
+                            try:
+                                degreeSelect = int(degreeSelect)
+                                if degreeSelect == 1:
+                                    print(wthr.cloudBase(1))
+                                    break
+                                elif degreeSelect == 2:
+                                    print(wthr.cloudBase(2))
+                                    break
+                            except:
+                                print("Error: Enter a number 1 or 2")
+                                continue
+                            break
+                            
+                    elif funcSelect == 6:
+                        funKill = True
+                        killed = True
+                        break
+                    else:
+                        print("Error: Function not identified")
+                        continue
+                if killed == True:
+                    break
 
             ## Speed Functions
             elif funcGSelect == 2:
@@ -86,7 +128,7 @@ while True:
                             except:
                                 print(numError)
                                 continue
-                    if funcSelect == 2: ## Top of Descent function
+                    elif funcSelect == 2: ## Top of Descent function
                         while True:
                             groundspeed = input("Enter Groundspeed: ")
                             iAlt = input("Enter Indicated Altitude: ")
@@ -102,7 +144,7 @@ while True:
                             except:
                                 print(numError)
                                 continue
-                    if funcSelect == 3: ##Endurance Function
+                    elif funcSelect == 3: ##Endurance Function
                         while True:
                             fuel = input("Enter total Fuel: ")
                             fph = input("Enter fuel burn (FPH): ")
@@ -113,7 +155,7 @@ while True:
                                 break
                             except:
                                 print(numError)
-                    if funcSelect == 4: ## Leg time
+                    elif funcSelect == 4: ## Leg time
                         while True:
                             distance = input("Enter Distance: ")
                             groundspeed = input("Enter groundspeed: ")
@@ -125,7 +167,7 @@ while True:
                             except:
                                 print(numError)
                                 continue
-                    if funcSelect == 5: ## Specific Range
+                    elif funcSelect == 5: ## Specific Range
                         while True: 
                             fuel = input("Enter Fuel: ")
                             fph = input("Enter fuel burn (FPH): ")
@@ -139,7 +181,7 @@ while True:
                             except:
                                 print(numError)
                                 continue
-                    if funcSelect == 6: ## Fuel per Hour
+                    elif funcSelect == 6: ## Fuel per Hour
                         while True:
                             fuel = input("Enter total Fuel: ")
                             hour = input("Enter hours: ")
@@ -155,7 +197,7 @@ while True:
                             except:
                                 print(numError)
                                 continue
-                    if funcSelect == 7:
+                    elif funcSelect == 7:
                         funKill = True
                         killed = True
                         break
