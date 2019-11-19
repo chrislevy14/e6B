@@ -89,3 +89,7 @@ def mac():
         except:
             print("Error: Values were not numbers")
             continue
+
+
+
+### ALL FUNCTIONS TESTED AND COMPLETED FOR WEIGHT AND BALANCE CLASS

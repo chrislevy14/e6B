@@ -12,6 +12,9 @@ import watch as w
 import flight as f
 import weightBalance as wb
 import weather as wthr
+import speed as s
+import required as r
+
 
 numError = "Error: Input(s) must be a number"
 
@@ -38,7 +41,7 @@ while True:
             else:
                 break
         except:
-            print("\nError: Enter the number of the list or type 'quit' to exit")
+            print("\nError: Enter the number of the list or type 'quit' to exit\n")
             continue
   
     if killed == True: ## Kills the entire Program
@@ -95,14 +98,65 @@ while True:
                 if killed == True:
                     break
 
-            ## Speed Functions
+            ## Speed Functions WORKING
             elif funcGSelect == 2:
-                a = 2
+                while funKill == False:
+                    funcSelect = input("\n1. Groundspeed\n2. Plan TAS\n3. Actual TAS\n4. Quit to Main Menu\n")
+                    try:
+                        funcSelect = int(funcSelect)
+                    except:
+                        print(f"{numError}\n")
+                        continue
+                    if funcSelect == 1:
+                        print(s.gs())
+                        break
+                    elif funcSelect == 2:
+                        print(s.planTAS())
+                        break
+                    elif funcSelect == 3:
+                        print(s.actTAS())
+                        break
+                    elif funcSelect == 4:
+                        funKill = True
+                        killed = True
+                        break
+                    else:
+                        print("Error: Function not identified")
+                        continue
+                if killed == True:
+                    break
 
-            ## Required Functions
+            ## Required Functions WORKING
             elif funcGSelect == 3:
-                a = 3
-            
+                while funKill == False:
+                    funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Quit to Main Menu\n")
+                    try:
+                        funcSelect = int(funcSelect)
+                    except:
+                        print(f"{numError}\n")
+                        continue
+                    if funcSelect == 1:
+                        print(r.fuel())
+                        break
+                    elif funcSelect == 2:
+                        print(r.climb())
+                        break
+                    elif funcSelect == 3:
+                        print(r.descent())
+                        break
+                    elif funcSelect == 4:
+                        print(r.tas())
+                        break
+                    elif funcSelect == 5:
+                        funKill = True
+                        killed = True
+                        break
+                    else:
+                        print("Error: Function not identified")
+                        continue
+                if killed == True:
+                    break
+
             ## Flight Functions WORKING
             elif funcGSelect == 4: 
                 while funKill == False:

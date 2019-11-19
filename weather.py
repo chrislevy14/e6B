@@ -175,4 +175,4 @@ def cloudBase(degreeSelect):
     return f"\nCloud Base: {round(CloudBase,1)} feet AGL"
     
 
- 
+### ALL FUNCTIONS TESTED AND COMPLETED FOR WEATHER CLASS
