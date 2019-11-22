@@ -80,4 +80,5 @@ def fuelPerHour(fuel,hour,min,sec):
 
 
 
+
 ### ALL FUNCTIONS TESTED AND COMPLETED FOR FLIGHT CLASS

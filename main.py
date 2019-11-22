@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 =========================
 ##  Main Script  ##
@@ -15,7 +16,6 @@ import weightBalance as wb
 import weather as wthr
 import speed as s
 import required as r
-
 
 numError = "Error: Input(s) must be a number"
 

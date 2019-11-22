@@ -1,4 +1,9 @@
 {
     "python.pythonPath": "/usr/local/bin/python3",
-    "npm.fetchOnlinePackageInfo": false
+    "npm.fetchOnlinePackageInfo": false,
+    "code-runner.preserveFocus": false,
+    "code-runner.runInTerminal": true,
+    "code-runner.terminalRoot": "/usr/local/bin/python3 ",
+    "code-runner.defaultLanguage": "/usr/local/bin/python3 ",
+
 }
