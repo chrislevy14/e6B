@@ -336,31 +336,35 @@ while True:
                 if killed == True:
                     break
 
-            ## Finds the AWOS/ASOS frequency and phone number of the entered field
+            ## AWOS/ASOS Function WORKING
             elif funcGSelect == 7:
                 while funKill == False:
-                    airport = input("Enter 4 letter Airport Identifier (Starting with K): ").upper()
+                    print("AWOS DETECTOR\n(type 'quit' to quit to Main Menu)\n")
+                    airport = input("Enter Airport Identifier (Starting with K): ").upper()
+                    if airport == "QUIT":
+                        killed = True
+                        break
                     try:
                         awos = a.awos(airport)
                     except:
                         print("Error: Enter the 4 letter identifier.\n") 
                         continue
-                    if awos == "None":
-                        print("Error: Airport/AWOS not found.")
+                    if awos == None:
+                        print("Error: Airport/AWOS not found.\n")
                         continue
                     else:
                         print(awos)
                         while True:
                             runAgain = input("Run again? (y/n): ").lower()
-                            try:
-                                if runAgain == 'y':
-                                    break
-                                elif runAgain == 'n':
-                                    funKill = True
-                                    killed = True
-                                    break
-                            except:
-                                print("Error: Enter y or n\n")
+                            if runAgain == 'y':
+                                break
+                            elif runAgain == 'n':
+                                funKill = True
+                                killed = True
+                                break
+                            else:
+                                print("Error: Enter 'y' or 'n'\n")
+                            
                 if killed == True:
                     break        
 
