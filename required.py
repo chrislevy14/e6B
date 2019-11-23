@@ -9,6 +9,8 @@ Christos Levy 2019
 """
 
 import math as m
+
+## REDEFINE TRIG FUNCTIONS
 def cos(x):
     return m.cos(m.radians(x))
 def sin(x):
@@ -102,6 +104,62 @@ def tas():
     tas = round(m.sqrt(groundspeed**2+wspd**2-(2*(groundspeed)*(wspd)*cos(angleA))),1)
     hdg = int(round(course+angleC,0))
     return f"TAS: {tas}\nHeading: {hdg}\n"
+
+## Returns the amount of money needed to make a trip given the cost of fuel and the distance/time
+def money():
+    while True:
+        selector = input("\n1. Calculate by distance\n2. Calculate by time\n")
+        try:
+            selector = int(selector)
+        except:
+            print("Error: Enter 1 for distance calculation or 2 for time calculations")
+            continue
+
+        if selector == 1:
+            while True: 
+                fuelCost = input("Enter average fuel cost: ")
+                fuelBurn = input("Enter fuel burn: ")
+                distance = input("Enter Trip Distance: ")
+                groundspeed = input("Enter Groundspeed: ")
+                try:
+                    fuelCost = float(fuelCost)
+                    distance = float(distance)
+                    fuelBurn = float(fuelBurn)
+                    groundspeed = float(groundspeed)
+                except:
+                    print("Error: Values must be numbers\n")
+                    continue
+                time = distance/groundspeed
+                totalCost = round(fuelCost*fuelBurn*time,2)
+                break
+            return f"Fuel Cost for {distance} Miles: ${totalCost}"
+            break
+    
+        elif selector == 2:
+            while True: 
+                fuelCost = input("Enter average fuel cost: ")
+                fuelBurn = input("Enter fuel burn: ")
+                hours = input("Enter Hours: ")
+                minutes = input("Enter Minutes: ")
+                seconds = input("Enter Seconds: ")
+                try:
+                    fuelCost = float(fuelCost)
+                    fuelBurn = float(fuelBurn)
+                    hours = float(hours)
+                    minutes = float(minutes)
+                    seconds = float(seconds)
+                except:
+                    print("Error: Values must be numbers\n")
+                    continue
+                hours += (seconds/3600) + (minutes/60)
+                totalCost = round(fuelCost*fuelBurn*hours,2)
+                break
+            return f"Fuel Cost for {round(hours,1)} hours: ${totalCost}"
+            break
+        else:
+            print("Error: Function not recognized.")
+            continue
+
 
 
 ### ALL FUNCTIONS TESTED AND COMPLETED FOR REQUIRED CLASS

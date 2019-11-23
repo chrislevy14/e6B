@@ -16,6 +16,9 @@ import weightBalance as wb
 import weather as wthr
 import speed as s
 import required as r
+import awos as a
+
+
 
 numError = "Error: Input(s) must be a number"
 
@@ -28,7 +31,7 @@ while True:
 
     while True: ## Finds Function Group
         print("Select a function group: ")
-        funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n\n"
+        funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n7. AWOS/ASOS Phone Number\n\n"
         funcGSelect = input(funcGroup)
         if funcGSelect == "quit":
             print("Thank you for using the Lev6B!\n\n")
@@ -36,7 +39,7 @@ while True:
             break
         try: 
             funcGSelect = int(funcGSelect)
-            if funcGSelect > 6 or funcGSelect < 1:
+            if funcGSelect > 7 or funcGSelect < 1:
                 print("Function Group Not Recognized\n")
                 continue
             else:
@@ -130,7 +133,7 @@ while True:
             ## Required Functions WORKING
             elif funcGSelect == 3:
                 while funKill == False:
-                    funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Required Money\n6. Quit to Main Menu\n")
                     try:
                         funcSelect = int(funcSelect)
                     except:
@@ -149,6 +152,9 @@ while True:
                         print(r.tas())
                         break
                     elif funcSelect == 5:
+                        print(r.money())
+                        break
+                    elif funcSelect == 6:
                         funKill = True
                         killed = True
                         break
@@ -329,6 +335,36 @@ while True:
                         print("Error: Enter a number 1-4")
                 if killed == True:
                     break
+
+            ## Finds the AWOS/ASOS frequency and phone number of the entered field
+            elif funcGSelect == 7:
+                while funKill == False:
+                    airport = input("Enter 4 letter Airport Identifier (Starting with K): ").upper()
+                    try:
+                        awos = a.awos(airport)
+                    except:
+                        print("Error: Enter the 4 letter identifier.\n") 
+                        continue
+                    if awos == "None":
+                        print("Error: Airport/AWOS not found.")
+                        continue
+                    else:
+                        print(awos)
+                        while True:
+                            runAgain = input("Run again? (y/n): ").lower()
+                            try:
+                                if runAgain == 'y':
+                                    break
+                                elif runAgain == 'n':
+                                    funKill = True
+                                    killed = True
+                                    break
+                            except:
+                                print("Error: Enter y or n\n")
+                if killed == True:
+                    break        
+
+
      
            
                 
