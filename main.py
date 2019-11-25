@@ -27,13 +27,13 @@ while True:
     killed = False
     funKill = False
     print("\n\nWelcome to the Lev6B!")
-    print("Functions are selected by typing the number. Type 'quit' to exit\n")
+    print("Functions are selected by typing the number. Type 'q' to exit\n")
 
     while True: ## Finds Function Group
         print("Select a function group: ")
         funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n7. AWOS/ASOS Phone Number\n\n"
         funcGSelect = input(funcGroup)
-        if funcGSelect == "quit":
+        if funcGSelect == "q" or funcGSelect == 'quit':
             print("Thank you for using the Lev6B!\n\n")
             killed = True
             break

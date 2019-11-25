@@ -1,0 +1,480 @@
+
+
+ 
+
+ 
+
+
+
+Airports
+
+Navaids
+
+Airspace Fixes
+
+Aviation Fuel
+
+Hotels
+
+AIRBOSS
+
+iPhone App
+
+My AirNav
+
+
+
+
+
+
+
+Airports
+
+Navaids
+
+Airspace Fixes
+
+Aviation Fuel
+
+Hotels
+
+AIRBOSS
+
+iPhone App
+
+My AirNav
+
+
+
+ 1166 users online
+  KVLL Oakland/Troy AirportTroy, Michigan, USA 
+GOING TO TROY?
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reserve a Hotel Room
+
+
+var slideIndex = 0;
+carousel("hotelbrands");
+
+function carousel() {
+    var c ='hotelbrands';
+    var i;
+    var x = document.getElementsByClassName(c);
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 500); // Change image every 2 seconds
+}
+
+
+
+
+
+
+Where will you pickup your Hertz vehicle?
+&bullet Oakland/Troy Airport Terminal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reserve a Hotel Room
+
+FAA INFORMATION EFFECTIVE 07 NOVEMBER 2019
+Location
+FAA Identifier: VLL
+Lat/Long: 42-32-34.6000N 083-10-40.4000W42-32.576667N 083-10.673333W42.5429444,-83.1778889(estimated)
+Elevation: 727.2 ft. / 221.7 m (surveyed)
+Variation: 06W (1995)
+From city: 2 miles E of TROY, MI
+Time zone: UTC -5 (UTC -4 during Daylight Saving Time)
+Zip code: 48084
+
+Airport Operations
+
+Airport use: Open to the public
+Control tower: no
+ARTCC: CLEVELAND CENTER
+FSS: LANSING FLIGHT SERVICE STATION
+NOTAMs facility: VLL (NOTAM-D service available)
+Attendance: 0800-1800
+Pattern altitude: 1727.2 ft. MSL
+Wind indicator: lighted
+Segmented circle: no
+Lights: ACTVT MIRL RY 09/27 & PAPI RYS 09 & 27 - CTAF.
+Beacon: white-green (lighted land airport)Operates sunset to sunrise.
+Landing fee: yes
+
+Airport Communications
+
+CTAF/UNICOM: 123.05
+WX AWOS-3: 119.475 (248-288-4649)
+DETROIT APPROACH: 134.3
+DETROIT DEPARTURE: 134.3
+WX ASOS at DET (11 nm SE): PHONE 313-371-9696
+WX ASOS at PTK (13 nm NW): 125.025 (248-886-8551)
+
+Nearby radio navigation aids
+
+VOR radial/distance  VOR name  FreqFAA Identifier: VLLLat/Long: 42-32-34.6000N 083-10-40.4000W42-32.576667N 083-10.673333W42.5429444,-83.1778889(estimated)Elevation: 727.2 ft. / 221.7 m (surveyed)Variation: 06W (1995)From city: 2 miles E of TROY, MITime zone: UTC -5 (UTC -4 during Daylight Saving Time)Zip code: 48084Airport use: Open to the publicControl tower: noARTCC: CLEVELAND CENTERFSS: LANSING FLIGHT SERVICE STATIONNOTAMs facility: VLL (NOTAM-D service available)Attendance: 0800-1800Pattern altitude: 1727.2 ft. MSLWind indicator: lightedSegmented circle: noLights: ACTVT MIRL RY 09/27 & PAPI RYS 09 & 27 - CTAF.Beacon: white-green (lighted land airport)Operates sunset to sunrise.Landing fee: yesCTAF/UNICOM: 123.05WX AWOS-3: 119.475 (248-288-4649)DETROIT APPROACH: 134.3DETROIT DEPARTURE: 134.3WX ASOS at DET (11 nm SE): PHONE 313-371-9696WX ASOS at PTK (13 nm NW): 125.025 (248-886-8551)SVMr069/20.1SALEM VORTAC114.3003WDXOr029/21.5DETROIT VOR/DME113.4006WYQGr325/23.4WINDSOR VOR/DME113.8006WCRLr026/32.2CARLETON VOR/DME115.7003WFNTr141/35.7FLINT VORTAC116.9006WGROSSE ILE005/26.541907WRYS .-. -.-- ...Fuel available: 100LL JET-AParking: tiedownsAirframe service: NONEPowerplant service: NONEDimensions: 3549 x 60 ft. / 1082 x 18 mSurface: asphalt, in fair conditionRunway edge lights: medium intensityRUNWAY 9  RUNWAY 27Latitude: 42-32.575973N42-32.578848NLongitude: 083-11.068925W083-10.278788WElevation: 727.0 ft.701.0 ft.Traffic pattern: leftleftRunway heading: 096 magnetic, 090 true276 magnetic, 270 trueMarkings: nonprecision, in good conditionnonprecision, in good conditionVisual slope indicator: 2-light PAPI on right (3.75 degrees glide path)2-light PAPI on left (3.75 degrees glide path)Runway end identifier lights: nonoTouchdown point: yes, no lightsyes, no lightsObstructions: 19 ft. tree, 207 ft. from runway, 137 ft. right of centerline30 ft. tree, 200 ft. from runway, 125 ft. left of centerlineOwnership: Publicly-ownedOwner: OAKLAND COUNTY6500 HIGHLAND ROADWATERFORD, MI 48327Phone (248) 288-6100ARPT PHONE 248-666-3900Manager: CHERYL BUSH6500 HIGHLAND RDWATERFORD, MI 48327Phone 248-666-3900Aircraft based on the field: 120Single engine airplanes: 109Multi engine airplanes: 7Helicopters: 3Ultralights: 1Aircraft based on the field: 120Single engine airplanes: 109Multi engine airplanes: 7Helicopters: 3Ultralights: 1    Aircraft operations: avg 82/day *50% transient general aviation50% local general aviation* for 12-month period ending 31 December 2019- DEER AND BIRDS ON & INVOF ARPT.- RY 09 +3 FT BERM 316 FT FM THLD.- NO TGL OR PRACTICE TFC PATTERNS.- FOR CD CTC DETROIT APCH AT 800-499-8181.FOREY TWO (RNAV) **CHANGED**  download (153KB)OKLND ONE (RNAV)  download (131KB)PETTE TWO (RNAV) **CHANGED**  download (193KB)RRALF TWO (RNAV) **CHANGED**  download (155KB)RNAV (GPS) RWY 09  download (163KB)BARII TWO (RNAV)  download (139KB)CCOBB TWO (RNAV)  download (185KB)CLVIN TWO (RNAV)  download (153KB)HHOWE TWO (RNAV)  download (169KB)KAYLN TWO (RNAV)  download (149KB)LIDDS TWO (RNAV)  download (162KB)MIGGY TWO (RNAV)  download (181KB)PAVYL TWO (RNAV)  download (160KB)SNDRS TWO (RNAV)  download (195KB)TRMML THREE (RNAV) **CHANGED**  download (145KB)ZETTR TWO (RNAV)  download (184KB)NOTE: Special Take-Off Minimums/Departure Procedures apply  download (125KB) 
+
+
+Loc | Ops | Rwys | IFR | FBO | Links
+Com | Nav | Svcs | Stats | Notes
+
+
+
+ 
+
+Road maps at:
+MapQuest
+Bing
+Google
+
+ 
+
+Aerial photo
+
+
+WARNING: Photo may not be current or correct
+
+Photo by Jeff Schuster
+Photo taken 29-Jun-2014
+looking west.
+
+Do you have a better or more recent aerial photo of Oakland/Troy Airport that you would like to share?  If so, please send us your photo.
+ 
+
+
+
+Sectional chart
+
+
+ 
+
+
+
+Airport distance calculator
+
+
+Flying to Oakland/Troy Airport?
+Find the distance to fly.
+From 
+to KVLL
+
+
+
+
+
+Sunrise and sunset
+
+Times for 24-Nov-2019
+
+ Local(UTC-5) Zulu(UTC)
+Morning civil twilight07:0512:05
+Sunrise07:3612:36
+Sunset17:0322:03
+Evening civil twilight17:3422:34
+
+
+
+
+
+Current date and time
+
+
+Zulu (UTC)  25-Nov-2019 01:56:59
+Local (UTC-5)  24-Nov-2019 20:56:59
+
+
+
+
+    
+
+METAR
+
+
+KVLL 250136Z AUTO 23004KT 10SM SCT120 06/01 A2965 RMK AO2 T00610011
+
+KDET 11nm SE 250053Z 22008KT 10SM CLR 06/02 A2964 RMK AO2 SLP042 T00560017
+
+KPTK 13nm NW 250053Z 26008KT 10SM BKN130 OVC210 06/00 A2961 RMK AO2 SLP036 T00560000
+
+KMTC 17nm E 250055Z 22006KT 12SM BKN130 OVC200 05/02 A2961 RMK AO2A SLP037 T00520022 $
+
+CYQG 19nm SE 250100Z AUTO 23011G16KT 9SM OVC140 05/02 A2964 RMK SLP046
+
+KDTW 20nm S 250053Z 21010KT 10SM BKN130 OVC220 05/02 A2965 RMK AO2 SLP046 T00500022
+
+
+
+
+
+TAF
+
+
+KDET 11nm SE 241734Z 2418/2518 23014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+KPTK 13nm NW 241734Z 2418/2518 24014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+KMTC 17nm E 241700Z 2417/2523 24012G18KT 9999 SCT015 BKN050 620809 QNH2955INS BECMG 2418/2419 25009KT 9999 SCT015 BKN070 620809 QNH2955INS BECMG 2500/2501 23009KT 9999 BKN008 BKN050 620809 QNH2960INS BECMG 2514/2515 22006KT 8000 -RA OVC009 620607 QNH2960INS TX07/2421Z TN03/2512Z 
+
+CYQG 19nm SE 241738Z 2418/2518 24012G22KT P6SM FEW015 TEMPO 2418/2502 BKN015 FM250200 24012KT P6SM OVC150 FM250600 24012KT P6SM -SHRA BKN015 OVC070 FM250900 23010KT P6SM BKN015 OVC070 FM251200 23015KT P6SM OVC015 FM251700 22015G25KT P6SM SCT020 RMK FCST BASED ON AUTO OBS. NXT FCST BY 250000Z 
+
+KDTW 20nm S 242105Z 2421/2524 22012KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+
+
+
+
+NOTAMs
+
+
+
+
+Click for the latest NOTAMs
+
+
+NOTAMs are issued by the DoD/FAA and will open in a separate window not controlled by AirNav.
+
+Loc | Ops | Rwys | IFR | FBO | Links
+Com | Nav | Svcs | Stats | Notes
+
+
+
+WARNING: Photo may not be current or correct
+
+Photo by Jeff Schuster
+Photo taken 29-Jun-2014
+looking west.
+
+Do you have a better or more recent aerial photo of Oakland/Troy Airport that you would like to share?  If so, please send us your photo.
+ 
+
+
+ 
+
+
+Flying to Oakland/Troy Airport?
+Find the distance to fly.
+From 
+to KVLL
+
+
+
+Times for 24-Nov-2019
+
+ Local(UTC-5) Zulu(UTC)
+Morning civil twilight07:0512:05
+Sunrise07:3612:36
+Sunset17:0322:03
+Evening civil twilight17:3422:34
+
+Morning civil twilight07:0512:05Sunrise07:3612:36Sunset17:0322:03Evening civil twilight17:3422:34
+
+Zulu (UTC)  25-Nov-2019 01:56:59
+Local (UTC-5)  24-Nov-2019 20:56:59
+
+25-Nov-2019 01:56:5924-Nov-2019 20:56:59
+
+KVLL 250136Z AUTO 23004KT 10SM SCT120 06/01 A2965 RMK AO2 T00610011
+
+KDET 11nm SE 250053Z 22008KT 10SM CLR 06/02 A2964 RMK AO2 SLP042 T00560017
+
+KPTK 13nm NW 250053Z 26008KT 10SM BKN130 OVC210 06/00 A2961 RMK AO2 SLP036 T00560000
+
+KMTC 17nm E 250055Z 22006KT 12SM BKN130 OVC200 05/02 A2961 RMK AO2A SLP037 T00520022 $
+
+CYQG 19nm SE 250100Z AUTO 23011G16KT 9SM OVC140 05/02 A2964 RMK SLP046
+
+KDTW 20nm S 250053Z 21010KT 10SM BKN130 OVC220 05/02 A2965 RMK AO2 SLP046 T00500022
+
+
+KVLL 250136Z AUTO 23004KT 10SM SCT120 06/01 A2965 RMK AO2 T00610011
+KDET 11nm SE 250053Z 22008KT 10SM CLR 06/02 A2964 RMK AO2 SLP042 T00560017
+KPTK 13nm NW 250053Z 26008KT 10SM BKN130 OVC210 06/00 A2961 RMK AO2 SLP036 T00560000
+KMTC 17nm E 250055Z 22006KT 12SM BKN130 OVC200 05/02 A2961 RMK AO2A SLP037 T00520022 $
+CYQG 19nm SE 250100Z AUTO 23011G16KT 9SM OVC140 05/02 A2964 RMK SLP046
+KDTW 20nm S 250053Z 21010KT 10SM BKN130 OVC220 05/02 A2965 RMK AO2 SLP046 T00500022
+
+
+KDET 11nm SE 241734Z 2418/2518 23014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+KPTK 13nm NW 241734Z 2418/2518 24014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+KMTC 17nm E 241700Z 2417/2523 24012G18KT 9999 SCT015 BKN050 620809 QNH2955INS BECMG 2418/2419 25009KT 9999 SCT015 BKN070 620809 QNH2955INS BECMG 2500/2501 23009KT 9999 BKN008 BKN050 620809 QNH2960INS BECMG 2514/2515 22006KT 8000 -RA OVC009 620607 QNH2960INS TX07/2421Z TN03/2512Z 
+
+CYQG 19nm SE 241738Z 2418/2518 24012G22KT P6SM FEW015 TEMPO 2418/2502 BKN015 FM250200 24012KT P6SM OVC150 FM250600 24012KT P6SM -SHRA BKN015 OVC070 FM250900 23010KT P6SM BKN015 OVC070 FM251200 23015KT P6SM OVC015 FM251700 22015G25KT P6SM SCT020 RMK FCST BASED ON AUTO OBS. NXT FCST BY 250000Z 
+
+KDTW 20nm S 242105Z 2421/2524 22012KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+
+KDET 11nm SE 241734Z 2418/2518 23014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+KPTK 13nm NW 241734Z 2418/2518 24014KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+KMTC 17nm E 241700Z 2417/2523 24012G18KT 9999 SCT015 BKN050 620809 QNH2955INS BECMG 2418/2419 25009KT 9999 SCT015 BKN070 620809 QNH2955INS BECMG 2500/2501 23009KT 9999 BKN008 BKN050 620809 QNH2960INS BECMG 2514/2515 22006KT 8000 -RA OVC009 620607 QNH2960INS TX07/2421Z TN03/2512Z 
+CYQG 19nm SE 241738Z 2418/2518 24012G22KT P6SM FEW015 TEMPO 2418/2502 BKN015 FM250200 24012KT P6SM OVC150 FM250600 24012KT P6SM -SHRA BKN015 OVC070 FM250900 23010KT P6SM BKN015 OVC070 FM251200 23015KT P6SM OVC015 FM251700 22015G25KT P6SM SCT020 RMK FCST BASED ON AUTO OBS. NXT FCST BY 250000Z 
+KDTW 20nm S 242105Z 2421/2524 22012KT P6SM SCT100 FM250600 19008KT P6SM OVC070 
+
+
+
+
+Click for the latest NOTAMs
+
+
+NOTAMs are issued by the DoD/FAA and will open in a separate window not controlled by AirNav.Click for the latest NOTAMs    JDS Pump-N-Go248-288-6100[email]Aviation fuel, Aircraft parking (ramp or tiedown), Hangar leasing / sales
+
+
+
+More info about JDS Pump-N-Go
+
+
+More info about JDS Pump-N-Go
+Avfuel100LL Jet ASS $5.40 $4.40  Updated 18-Nov-2019
+Avfuel100LLJet ASS $5.40 $4.40  Updated 18-Nov-2019 
+ 
+ write
+SS=Self service
+
+SS=Self service  If your business provides an interesting product or service to pilots, flight crews, aircraft, or users of the Oakland/Troy Airport, you should consider listing it here.  To start the listing process, click on the button below 
+
+Oakland/Troy Airport WebsitePage from the Michigan Airport Directory (PDF)
+Copyright © AirNav, LLC. All rights reserved.
+
+Privacy Policy 
+Contact
