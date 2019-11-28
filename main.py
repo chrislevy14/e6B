@@ -31,15 +31,15 @@ while True:
 
     while True: ## Finds Function Group
         print("Select a function group: ")
-        funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n7. AWOS/ASOS Phone Number\n\n"
+        funcGroup = "1. Weather and Heading Functions\n2. Speed Functions\n3. Required Functions\n4. Flight Functions\n5. Weight and Balance Functions\n6. Conversion and Clock Functions\n7. AWOS/ASOS Phone Number and METAR Finder\n8. Quit\n\n"
         funcGSelect = input(funcGroup)
-        if funcGSelect == "q" or funcGSelect == 'quit':
+        if funcGSelect == "q" or funcGSelect == 'quit' or funcGSelect == '8':
             print("Thank you for using the Lev6B!\n\n")
             killed = True
             break
         try: 
             funcGSelect = int(funcGSelect)
-            if funcGSelect > 7 or funcGSelect < 1:
+            if funcGSelect > 8 or funcGSelect < 1:
                 print("Function Group Not Recognized\n")
                 continue
             else:
@@ -58,8 +58,12 @@ while True:
             ## Weather and Heading Functions WORKING
             if funcGSelect == 1:
                 while funKill == False:
-                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue\n3. Wind Direction and Speed\n4. Crosswind and Headwind Componenet\n5. Cloud Base\n6. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue\n3. Wind Direction and Speed\n4. Crosswind and Headwind Componenet\n5. Cloud Base\n6. Quit to Main Menu\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print(f"{numError}\n")
@@ -105,8 +109,12 @@ while True:
             ## Speed Functions WORKING
             elif funcGSelect == 2:
                 while funKill == False:
-                    funcSelect = input("\n1. Groundspeed\n2. Plan TAS\n3. Actual TAS\n4. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Groundspeed\n2. Plan TAS\n3. Actual TAS\n4. Quit to Main Menu\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print(f"{numError}\n")
@@ -133,8 +141,12 @@ while True:
             ## Required Functions WORKING
             elif funcGSelect == 3:
                 while funKill == False:
-                    funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Required Money\n6. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Required Money\n6. Quit to Main Menu\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print(f"{numError}\n")
@@ -167,8 +179,12 @@ while True:
             ## Flight Functions WORKING
             elif funcGSelect == 4: 
                 while funKill == False:
-                    funcSelect = input("\n1. Distance Flown\n2. Top of Descent\n3. Endurance\n4. Leg Time\n5. Specific Range\n6. Fuel Per Hour\n7. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Distance Flown\n2. Top of Descent\n3. Endurance\n4. Leg Time\n5. Specific Range\n6. Fuel Per Hour\n7. Quit to Main Menu\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print(f"{numError}\n")
@@ -268,8 +284,12 @@ while True:
             # Weight and Balance Functions WORKING                       
             elif funcGSelect == 5:
                 while funKill == False:
-                    funcSelect = input("\n1. Weight and Arm\n2. Weight and Moment\n3. Percent Mean Aerodynamic Chord\n4. Quit to Main Menu\n")
+                    funcSelect = input("\n1. Weight and Arm\n2. Weight and Moment\n3. Percent Mean Aerodynamic Chord\n4. Quit to Main Menu\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print(numError)
@@ -294,6 +314,10 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Timer\n2. Stopwatch\n3. Convert Temperature\n4. Quit to Main Menu\n\n").lower()
                     try:
+                        if funcSelect == 'quit' or 'q':
+                            funKill = True
+                            killed = True
+                            break
                         funcSelect = int(funcSelect)
                     except:
                         print("Error: You must enter a number\n")
@@ -339,35 +363,57 @@ while True:
             ## AWOS/ASOS Function WORKING
             elif funcGSelect == 7:
                 while funKill == False:
-                    print("AWOS DETECTOR\n(type 'quit' to quit to Main Menu)\n")
-                    airport = input("Enter Airport Identifier (Starting with K): ").upper()
-                    if airport == "QUIT":
-                        killed = True
-                        break
+                    funcSelect = input("\n1. AWOS or ASOS Finder\n2. Get Airport METAR\n3. Quit to Main Menu\n").lower()
                     try:
-                        awos = a.awos(airport)
+                        if funcSelect == "quit":
+                            killed=True
+                            break
+                        funcSelect = int(funcSelect)
+                        if funcSelect>3 or funcSelect < 1:
+                            print("Fuction not found. Enter a number from the list\n")
+                            continue
                     except:
-                        print("Error: Enter the 4 letter identifier.\n") 
+                        print("Error: Value must be a number\n")
                         continue
-                    if awos == None:
-                        print("Error: Airport/AWOS not found.\n")
-                        continue
-                    else:
-                        print(awos)
+                    if funcSelect == 1:
+                        print("AWOS DETECTOR\n(type 'quit' to quit to Main Menu)\n")
                         while True:
-                            runAgain = input("Run again? (y/n): ").lower()
-                            if runAgain == 'y':
-                                break
-                            elif runAgain == 'n':
-                                funKill = True
+                            airport = input("Enter Airport Identifier (Starting with K): ").upper()
+                            if airport == "QUIT":
                                 killed = True
                                 break
+                            try:
+                                awos = a.awos(airport)
+                            except:
+                                print("Error: Enter the 4 letter identifier.\n") 
+                                continue
+                            if awos == None:
+                                print("Error: Airport/AWOS not found.\n")
+                                continue
                             else:
-                                print("Error: Enter 'y' or 'n'\n")
+                                print(awos)
+                                break
+                    elif funcSelect == 2:
+                        print("AIRPORT METARS\n(type 'quit' to quit to Main Menu)\n")
+                        while True:
+                            airport = input("Enter Airport Identifier (Starting with K): ").lower()
+                            if airport == "quit":
+                                killed = True
+                                break
+                            try:
+                                metar = a.metar(airport)
+                            except:
+                                print("Airport not Found")
+                                continue
+                            print(metar)
+                            break
+                    elif funcSelect == 3:
+                        funKill = True
+                        killed = True
+                        break
                             
                 if killed == True:
                     break        
-
 
      
            

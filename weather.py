@@ -41,7 +41,7 @@ def hdgGs():
     else:
         wca = ( asin( (wspd*sin(wdir-crs)) /gs ) )
         heading = round(crs + wca)
-        return (f"GROUNDSPEED: {gs}\nHEADING: {heading}\nWCA: {wca}")
+        return (f"GROUNDSPEED: {gs}\nHEADING: {heading}\nWCA: {round(wca,1)}")
 
 ## Calulates the Pressure and density altitude
 def pressureDensityAlt():

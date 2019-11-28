@@ -10,7 +10,8 @@ Christos Levy 2019
 ## Import Webscrape modules
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen
-from fractions import Fraction
+import datetime
+import os
 
 ## Contains all the different abbreviations for weather
 def translator(stringOfAbbre):
@@ -91,18 +92,25 @@ def skyTranslator(stringofSkyCond):
     skyCond = []
     if "NCD" in s:
         skyCond.append("Nil Clouds Detected")
+        skyCond.append(int(s[3:len(s)])*100)
     if "CLR" in s:
         skyCond.append("Clear Skies")
+        skyCond.append(int(s[3:len(s)])*100)
     if "FEW" in s:
         skyCond.append("Few Clouds")
+        skyCond.append(int(s[3:len(s)])*100)
     if "SCT" in s:
         skyCond.append("Scattered Clouds")
+        skyCond.append(int(s[3:len(s)])*100)
     if "BKN" in s:
         skyCond.append("Broken Clouds")
+        skyCond.append(int(s[3:len(s)])*100)
     if "OVC" in s:
         skyCond.append("Overcast")
+        skyCond.append(int(s[3:len(s)])*100)
     if "VV" in s:
         skyCond.append("Vertical Visibilty")
+        skyCond.append(int(s[3:len(s)])*100)
     return skyCond
 
 ## Finds the AWOS of the entered airport and prints frequency and phone number
@@ -122,14 +130,25 @@ def awos(airportID):
             line.rstrip('\n')
             if "ASOS" in line or "AWOS" in line:
                 return line
+                directory = os.getcwd()+'/Webdata.txt'
+                os.remove(directory)
                 break
-
+    
 
 def metar(airportID):
+    ## Checks if airport has a metar
+    for a in list(airportID):
+        try:
+            a = int(a)
+            return("Airport does not have a METAR.\n")
+            break
+        except:
+            continue
+
     ## Opens Webpage
     html = urlopen("http://aviationweather.gov/metar/data?ids="+airportID+"&format=raw&date=&hours=0")
     metarPage = bs(html,features="html.parser")
-
+    
     ## Creates a list of every metar attribute
     for metarLine in metarPage.find_all('code'):
         fullMetar = metarLine.get_text()
@@ -148,9 +167,10 @@ def metar(airportID):
     airport = metar[0]
 
     ## TIME VALUES (DATE AND ZULU TIME)
+    dt = datetime.datetime.today()
     time = metar[1]
-    date = int(time[0:2])
-    zuluTime = time[2:6]
+    date = f"{dt.month}/{int(time[0:2])}/{dt.year}"
+    zuluTime = f"{time[2:6]} Zulu"
 
     ## WIND VALUES (direction,velocity,gust(try))
     wind = metar[2]
@@ -165,11 +185,11 @@ def metar(airportID):
         visibility = metar[4]
         direction = f"Wind Variable between {variation[0:2]} and {variation[3:6]}"
     else:
-        direction = f"{wind[0:3]}"
-        velocity = f"{wind[0:3]} knots"
+        direction = f"{wind[0:3]} Degrees"
+        velocity = f"{wind[3:5]} knots"
         visibility = metar[3]
         if "G" in wind:
-            gust = f" Gusting {wind[6:8]} knots"
+            gust = f"Gusting {wind[6:8]} knots"
     
 
     # VISIBILITY VALUES(visibiltyNum)
@@ -197,33 +217,60 @@ def metar(airportID):
         if "P" in visibility:
             visibilityNum = f"Greater than 10 Statute Miles"
 
-    
 
-    ## WEATHER CHECKER (skyCond,weth)
-    weather = metar[metar.index(visibility)+1] ## Statement is made for both cases of visibility (being index 3 or 4)
-
-    ## Checks if there are two weather statements (Sky Conditon and weather)
-    if len(metar[metar.index(visibility)+2].split("/")) == 2:
-        tempDew = metar[metar.index(visibility)+2]
-        skyCond = weather
+    ## WEATHER CHECKER (weather and sky conditions)
+    listofSkyConds = []
+    if len(metar[metar.index(visibility)+1]) < 6 or len(metar[metar.index(visibility)+1]) > 6:
+        weather = metar[metar.index(visibility)+1] ## Statement is made for both cases of visibility (being index 3 or 4)
+        weather = translator(weather)
+        counter = metar.index(weather)+1
     else:
-        skyCond = metar[metar.index(visibility)+2]
-        tempDew = metar[metar.index(visibility)+3]
+        weather = "No Weather"
+        listofSkyConds.append(metar[metar.index(visibility)+1])
+        counter = metar.index(visibility)+2
+        
     
-    w = translator(weather)
-    s = skyTranslator(skyCond)
+    
+    
+    while True:
+        if not("/" in metar[counter]):
+            listofSkyConds.append(metar[counter])
+            counter+=1
+        else:
+            break
+    skyCond = []
+
+    ## Translates SkyConds:
+    for i in listofSkyConds:
+        skyCond.append(skyTranslator(i))
+
+    ## Temperature
+    tempDew = metar[counter]
+    tempDew = tempDew.split("/")
+    for t in range(len(tempDew)):
+        if "M" in tempDew[t]:
+            tempDew[t] = -int(tempDew[t][1:len(tempDew[t])])
+        else: 
+            tempDew[t] = tempDew[t]
+    tempDew = f"Temperature: {int(tempDew[0])} Degrees Celsius\nDew Point: {int(tempDew[1])} Degrees Celsius"
+
+    ## Altimeter
+    altimeter = metar[counter+1]
+    altimeter = altimeter[1:len(altimeter)]
+    altimeter = f"Altimeter: {altimeter[0:2]}.{altimeter[2:len(altimeter)]}"
 
 
-    ############# FINSIHED CREATING LISTS AND NOW NEEDS FORMATTING FOR WEATHER SECTION
-
-
-    altimeter = metar[metar.index(tempDew)+1]
-    print(s)
-
-metar('kvll')
-
-
-
+    ## Format Variables into strings
+    html = urlopen("http://airnav.com/airport/"+airportID) #Opens URL and converts to HTML
+    airNav = bs(html,features="html.parser") # Converts to a soup file
+    airportName = airNav.title.string
+    airportName = airportName[8:len(airportName)]
+    
+    try:
+        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}, {gust}\nVisibility: {visibility}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
+    except:
+        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}\nVisibility: {visibility}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
+    
 
 
 
