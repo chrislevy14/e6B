@@ -273,4 +273,6 @@ def metar(airportID):
     
 
 
+### ALL FUNCTIONS TESTED AND COMPLETED FOR AWOS CLASS
+
 

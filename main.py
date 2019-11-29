@@ -58,9 +58,9 @@ while True:
             ## Weather and Heading Functions WORKING
             if funcGSelect == 1:
                 while funKill == False:
-                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitdue\n3. Wind Direction and Speed\n4. Crosswind and Headwind Componenet\n5. Cloud Base\n6. Quit to Main Menu\n").lower()
+                    funcSelect = input("\n1. Heading and Groundspeed\n2. Pressure and Density Altitude\n3. Wind Direction and Speed\n4. Crosswind and Headwind Component\n5. Cloud Base\n6. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == "quit" or funcSelect == "q":
                             funKill = True
                             killed = True
                             break
@@ -111,7 +111,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Groundspeed\n2. Plan TAS\n3. Actual TAS\n4. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == 'quit' or funcSelect == 'q':
                             funKill = True
                             killed = True
                             break
@@ -143,7 +143,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Required Fuel\n2. Required Rate of Climb\n3. Required Rate of Descent\n4. Required TAS\n5. Required Money\n6. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == 'quit' or funcSelect == 'q':
                             funKill = True
                             killed = True
                             break
@@ -181,7 +181,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Distance Flown\n2. Top of Descent\n3. Endurance\n4. Leg Time\n5. Specific Range\n6. Fuel Per Hour\n7. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == 'quit' or funcSelect == 'q':
                             funKill = True
                             killed = True
                             break
@@ -286,7 +286,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Weight and Arm\n2. Weight and Moment\n3. Percent Mean Aerodynamic Chord\n4. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == 'quit' or funcSelect == 'q':
                             funKill = True
                             killed = True
                             break
@@ -314,7 +314,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. Timer\n2. Stopwatch\n3. Convert Temperature\n4. Quit to Main Menu\n\n").lower()
                     try:
-                        if funcSelect == 'quit' or 'q':
+                        if funcSelect == 'quit' or funcSelect == 'q':
                             funKill = True
                             killed = True
                             break
@@ -365,7 +365,7 @@ while True:
                 while funKill == False:
                     funcSelect = input("\n1. AWOS or ASOS Finder\n2. Get Airport METAR\n3. Quit to Main Menu\n").lower()
                     try:
-                        if funcSelect == "quit":
+                        if funcSelect == "quit" or funcSelect == 'q':
                             killed=True
                             break
                         funcSelect = int(funcSelect)
@@ -413,9 +413,4 @@ while True:
                         break
                             
                 if killed == True:
-                    break        
-
-     
-           
-                
-                
+                    break
