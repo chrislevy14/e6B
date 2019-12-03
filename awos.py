@@ -7,6 +7,7 @@ Finds the AWOS or ASOS Phone number of a specified field
 Christos Levy 2019
 ==========================================================
 """
+
 ## Import Webscrape modules
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen
@@ -134,7 +135,7 @@ def awos(airportID):
                 os.remove(directory)
                 break
     
-
+## Finds the METAR of an airport and prints out a translated version using the translator functions
 def metar(airportID):
     ## Checks if airport has a metar
     for a in list(airportID):
@@ -212,7 +213,7 @@ def metar(airportID):
     try:
         visibilityNum = f"{float(visibilityNumList[0])+addOn} Statute Mile(s)"
     except:
-        if "M" in visibility:
+        if "M" in visibility[0]:
             visibilityNum = f"Less than 1/4 Statute Miles"
         if "P" in visibility:
             visibilityNum = f"Greater than 10 Statute Miles"
@@ -221,9 +222,9 @@ def metar(airportID):
     ## WEATHER CHECKER (weather and sky conditions)
     listofSkyConds = []
     if len(metar[metar.index(visibility)+1]) < 6 or len(metar[metar.index(visibility)+1]) > 6:
-        weather = metar[metar.index(visibility)+1] ## Statement is made for both cases of visibility (being index 3 or 4)
-        weather = translator(weather)
-        counter = metar.index(weather)+1
+        weatherL = metar[metar.index(visibility)+1] ## Statement is made for both cases of visibility (being index 3 or 4)
+        weather = translator(weatherL)
+        counter = metar.index(weatherL)+1
     else:
         weather = "No Weather"
         listofSkyConds.append(metar[metar.index(visibility)+1])
@@ -267,12 +268,14 @@ def metar(airportID):
     airportName = airportName[8:len(airportName)]
     
     try:
-        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}, {gust}\nVisibility: {visibility}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
+        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}, {gust}\nVisibility: {visibilityNum}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
     except:
-        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}\nVisibility: {visibility}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
-    
+        return(f"\nFull Metar: {fullMetar}\n{airportName}\n{date}\n{zuluTime}\nWind: {direction} at {velocity}\nVisibility: {visibilityNum}\n{weather}\n{skyCond}\n{tempDew}\n{altimeter}")
+
+
+
+
 
 
 ### ALL FUNCTIONS TESTED AND COMPLETED FOR AWOS CLASS
-
 
