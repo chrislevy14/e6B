@@ -1,13 +1,15 @@
 #!/usr/bin/env python
-"""
-=========================
-##  Main Script  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	Main script that runs all the e6B functions
 
-Runs e6B Functions
-
-Christos Levy 2019
-=========================
-"""
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 
 ## IMPORTED FUNCTION CLASSES
 import watch as w

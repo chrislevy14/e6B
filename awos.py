@@ -1,12 +1,14 @@
-"""
-==========================================================
-##  AWOS Finder Script  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	AWOS script that scrapes the internet for AWOS phone number and METAR data
 
-Finds the AWOS or ASOS Phone number of a specified field
-
-Christos Levy 2019
-==========================================================
-"""
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 
 ## Import Webscrape modules
 from bs4 import BeautifulSoup as bs
@@ -226,7 +228,7 @@ def metar(airportID):
         weather = translator(weatherL)
         counter = metar.index(weatherL)+1
     else:
-        weather = "No Weather"
+        weather = "No Visible Weather Conditions"
         listofSkyConds.append(metar[metar.index(visibility)+1])
         counter = metar.index(visibility)+2
         

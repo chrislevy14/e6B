@@ -1,12 +1,14 @@
-"""
-=============================================
-##  Weight and Balance Class  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	WeightBalance Script containing the Weight and balance calculator function
 
-Contains weight and balance functions
-
-Christos Levy 2019
-=============================================
-"""
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 def inf():
     while True:
         yield
@@ -30,7 +32,7 @@ def weightArm():
             if totalWeight == 0:
                 centerGravity += 0
             else:
-                centerGravity += totalMoment/totalWeight
+                centerGravity = totalMoment/totalWeight
         except:
             print("Error: Values were not numbers")
             continue
@@ -57,7 +59,7 @@ def weightMom():
             WeightList.append(weight)
             totalWeight = sum(WeightList)
             totalMoment += moment
-            centerGravity += totalMoment/totalWeight
+            centerGravity = totalMoment/totalWeight
         except:
             print("Error: Values were not numbers")
             continue

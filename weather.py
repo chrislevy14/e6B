@@ -1,12 +1,14 @@
-"""
-=============================================
-##  Weather Class  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	Weather script containing functions related to weather affecting performance
 
-Contains weather and heading functions
-
-Christos Levy 2019
-=============================================
-"""
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 import math as m
 
 ## Redfine Sin and cos functions for easy usage

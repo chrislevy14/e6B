@@ -1,13 +1,15 @@
 #/usr/bin/python3
-"""
-==========================================================
-##  Watch Class  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	Watch script containing stopwatch,timer and a conversion function
 
-Contains several time related functions
-
-Christos Levy 2019
-==========================================================
-"""
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 
 import time
 

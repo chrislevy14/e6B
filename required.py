@@ -1,12 +1,15 @@
-"""
-==========================================================
-##  Required Functions Class  ##
+'''
+===============================================================================
+ENGR 133 Program Description 
+	Required script that runs various functions calculating 'necessary' values
 
-Contains functions of required operations
+Project Information
+	Project Title:  Lev6B
+	Author:         Christos Levy, levy30@purdue.edu
+	Team ID:        002-10
+===============================================================================
+'''
 
-Christos Levy 2019
-==========================================================
-"""
 
 import math as m
 
