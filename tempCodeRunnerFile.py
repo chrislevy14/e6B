@@ -1,1 +1,0 @@
- print(f"{Min} Minute(s) {Sec} second(s)", end = '\r')
