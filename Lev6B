@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd ~/Documents/"ENGR 133"/"Final Project"/"e6B"/"Scripts"
+
+python3 main.py
